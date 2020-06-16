@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'com.noscoope.blazeit.Main'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+application {
+    applicationDefaultJvmArgs = ['-Djava.library.path=C:\\Users\\wkacp\\Desktop\\blazeit\\lib\\native\\windows']
+}
+
+dependencies {
+    compile (name: 'lwjgl', ext: 'jar')
+    compile (name: 'slick', ext: 'jar')
+    compile (name: 'jorbis', ext: 'jar')
+    compile (name: 'jogg', ext: 'jar')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+        }
+        resources {
+            srcDir 'res'
+        }
+    }
+}
